@@ -24,10 +24,13 @@ def imprimirArbolPostfijo(arbol):
                 imprimirArbolPostfijo(arbol.der)
                 print arbol.valor               
 
+while True:
+        opcion = raw_input('Desea ingresar una expresion matematica en posfijo: (Y/N)')
+        if opcion == 'Y':
+                cadena = leerCadena()
+                pila = Pila()
+                nodo = crearArbol(cadena, pila)
+                print "Resultado operacion: " , evaluar(nodo)
+        if opcion == 'N':
+                break
 
-cadena = leerCadena()
-pila = Pila()
-nodo = crearArbol(cadena, pila)
-print "impresion de Arbol:"
-imprimirArbolPostfijo(nodo)
-print "Resultado operacion: " , evaluar(nodo)

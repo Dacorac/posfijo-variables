@@ -23,13 +23,12 @@ def evaluar(arbol):
 
 	if arbol.valor == '=':
 		valor = evaluar(arbol.izq)
-		Tabla.variables[arbol.der] = valor
+		Tabla.variables[arbol.der.valor] = valor
 		return valor
 	
 	if Tabla.variables.has_key(arbol.valor) == True:
 		return Tabla.variables[arbol.valor]
 	elif Tabla.variables.has_key(arbol.valor) == False:
-		print "devolviendo valor"
 		return int(arbol.valor)
 			
 			
